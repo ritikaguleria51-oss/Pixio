@@ -1,8 +1,11 @@
 import React, { useState } from "react";
-
 import { LuSparkle, LuX, LuMenu } from "react-icons/lu";
 import { BsCartDash } from "react-icons/bs";
 import { IoIosSearch , IoMdHeartEmpty  } from "react-icons/io";
+
+
+import { Link } from '@inertiajs/react';
+import { route } from 'ziggy-js';
 
 
 import "./Header.css";
@@ -35,10 +38,13 @@ function Header() {
         {/* Right Side */}
         <div className="header-right">
 
-          <a href="#" className="login">
-            Login /<br />
-            Register
-          </a>
+          <a href="http://127.0.0.1:8000/login">
+    Login
+</a>
+
+<a href="http://127.0.0.1:8000/register">
+    Register
+</a>
 
           <IoIosSearch  className="header-icon" size={25} />
 
