@@ -9,7 +9,7 @@ import { route } from 'ziggy-js';
 
 
 import "./Header.css";
-import Logo from "./assests/images/logo (1).svg"
+import Logo from "./assets/images/logo (1).svg"
 
 function Header() {
   const [mobileMenu, setMobileMenu] = useState(false);
