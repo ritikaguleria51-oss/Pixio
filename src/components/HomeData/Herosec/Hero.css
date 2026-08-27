@@ -1,0 +1,286 @@
+/* =========================
+   Main Banner Section
+========================= */
+
+.dual-banner-section {
+  width: 100%;
+  overflow: hidden;
+  background: #fff;
+}
+
+.dual-banner-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+
+/* =========================
+   Promo Card
+========================= */
+
+.promo-card {
+  position: relative;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  padding: 60px;
+  overflow: hidden;
+}
+
+
+/* =========================
+   Background Images
+========================= */
+
+.promo-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: center;
+
+  opacity: 0.75;
+
+  transition: transform 0.7s ease;
+}
+
+.promo-card:hover .promo-image {
+  transform: scale(1.05);
+}
+
+
+/* =========================
+   Overlay
+========================= */
+
+.promo-overlay {
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.8),
+    rgba(0, 0, 0, 0.4),
+    transparent
+  );
+}
+
+
+/* =========================
+   Content
+========================= */
+
+.promo-content {
+  position: relative;
+  z-index: 2;
+
+  max-width: 500px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+
+/* =========================
+   Sale Badge
+========================= */
+
+.sale-badge {
+  display: inline-block;
+
+  background: #cc0d39;
+  color: #fff;
+
+  font-size: 12px;
+  font-weight: 800;
+
+  padding: 8px 16px;
+
+  border-radius: 30px;
+
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+
+/* Right Badge */
+
+.white-badge {
+  background: #fff;
+  color: #000;
+}
+
+
+/* =========================
+   Heading
+========================= */
+
+.promo-content h2 {
+  margin: 0;
+
+  color: #fff;
+
+  font-size: 58px;
+  line-height: 1;
+  font-weight: 900;
+}
+
+.left-promo .promo-content h2 span {
+  color: #feeb9d;
+}
+
+
+/* =========================
+   Paragraph
+========================= */
+
+.promo-content p {
+  margin: 0;
+
+  max-width: 430px;
+
+  color: #d1d1d1;
+
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+
+/* =========================
+   Button
+========================= */
+
+.button-wrapper {
+  padding-top: 8px;
+}
+
+.shop-btn {
+  display: inline-block;
+
+  padding: 14px 32px;
+
+  border-radius: 30px;
+
+  font-size: 12px;
+  font-weight: 800;
+
+  text-transform: uppercase;
+  letter-spacing: 2px;
+
+  text-decoration: none;
+
+  transition: all 0.3s ease;
+}
+
+
+/* Left Button */
+
+.outline-btn {
+  color: #fff;
+  border: 2px solid #fff;
+  background: transparent;
+}
+
+.outline-btn:hover {
+  background: #fff;
+  color: #000;
+}
+
+
+/* Right Button */
+
+.filled-btn {
+  background: #fff;
+  color: #000;
+
+  border: 2px solid #fff;
+
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+}
+
+.filled-btn:hover {
+  background: #cc0d39;
+  border-color: #cc0d39;
+  color: #fff;
+}
+
+
+/* =========================
+   Tablet
+========================= */
+
+@media (max-width: 991px) {
+
+  .promo-card {
+    min-height: 450px;
+    padding: 40px;
+  }
+
+  .promo-content h2 {
+    font-size: 45px;
+  }
+
+}
+
+
+/* =========================
+   Mobile
+========================= */
+
+@media (max-width: 767px) {
+
+  .dual-banner-container {
+    grid-template-columns: 1fr;
+  }
+
+  .promo-card {
+    min-height: 450px;
+    padding: 30px;
+  }
+
+  .promo-content {
+    max-width: 100%;
+  }
+
+  .promo-content h2 {
+    font-size: 42px;
+  }
+
+  .promo-content p {
+    font-size: 13px;
+  }
+
+}
+
+
+/* =========================
+   Small Mobile
+========================= */
+
+@media (max-width: 480px) {
+
+  .promo-card {
+    min-height: 420px;
+    padding: 25px;
+  }
+
+  .promo-content h2 {
+    font-size: 36px;
+  }
+
+  .sale-badge {
+    font-size: 10px;
+    padding: 7px 13px;
+  }
+
+  .shop-btn {
+    padding: 12px 25px;
+    font-size: 11px;
+  }
+
+}
