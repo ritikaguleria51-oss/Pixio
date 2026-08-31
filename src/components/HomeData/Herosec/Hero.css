@@ -9,9 +9,10 @@
 }
 
 .dual-banner-container {
-  width: 100%;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
 }
 
 
@@ -283,4 +284,7 @@
     font-size: 11px;
   }
 
+  .promo-card.left-promo {
+    border-radius: 0;
+}
 }
