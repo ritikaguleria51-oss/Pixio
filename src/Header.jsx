@@ -4,8 +4,8 @@ import { BsCartDash } from "react-icons/bs";
 import { IoIosSearch , IoMdHeartEmpty  } from "react-icons/io";
 
 
-import { Link } from '@inertiajs/react';
-import { route } from 'ziggy-js';
+// import { Link } from '@inertiajs/react';
+// import { route } from 'ziggy-js';
 
 
 import "./Header.css";
@@ -27,24 +27,20 @@ function Header() {
 
         {/* Desktop Navigation */}
         <nav className="nav-menu">
-          <a href="#">Home <LuSparkle size={13} /></a>
-          <a href="#">Shop <LuSparkle size={13} /></a>
-          <a href="#">Blog <LuSparkle size={13} /></a>
-          <a href="#">Post Layout <LuSparkle size={13} /></a>
-          <a href="#">Portfolio <LuSparkle size={13} /></a>
-          <a href="#">Pages <LuSparkle size={13} /></a>
+          <a href="/">Home <LuSparkle size={13} /></a>
+          <a href="/shop">Shop <LuSparkle size={13} /></a>
+          <a href="/blog">Blog <LuSparkle size={13} /></a>
+          <a href="/post-layout">Post Layout <LuSparkle size={13} /></a>
+          <a href="/portfolio">Portfolio <LuSparkle size={13} /></a>
+          <a href="/pages">Pages <LuSparkle size={13} /></a>
         </nav>
 
         {/* Right Side */}
         <div className="header-right">
 
-          <a href="http://127.0.0.1:8000/login">
-    Login
-</a>
+          <a href="/login">Login</a>
 
-<a href="http://127.0.0.1:8000/register">
-    Register
-</a>
+          <a href="/register">Register</a>
 
           <IoIosSearch  className="header-icon" size={25} />
 
@@ -69,13 +65,13 @@ function Header() {
       {/* Mobile Navigation */}
       {mobileMenu && (
         <nav className="mobile-menu">
-          <a href="#">Home</a>
-          <a href="#">Shop</a>
-          <a href="#">Blog</a>
-          <a href="#">Post Layout</a>
-          <a href="#">Portfolio</a>
-          <a href="#">Pages</a>
-          <a href="#">Login / Register</a>
+          <a href="/">Home</a>
+          <a href="/shop">Shop</a>
+          <a href="/blog">Blog</a>
+          <a href="/post-layout">Post Layout</a>
+          <a href="/portfolio">Portfolio</a>
+          <a href="/pages">Pages</a>
+          <a href="/login">Login / Register</a>
         </nav>
       )}
     </header>
