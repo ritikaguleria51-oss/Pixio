@@ -1,0 +1,895 @@
+/* =========================================
+   MAIN SECTION
+========================================= */
+
+.nearby-section {
+  width: 100%;
+  height: 650px;
+
+  position: relative;
+
+  overflow: hidden;
+
+  background: #fffaf3;
+}
+
+
+/* =========================================
+   MAP BACKGROUND
+========================================= */
+
+.nearby-map {
+  position: absolute;
+
+  inset: 0;
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      120deg,
+      transparent 47%,
+      #eee5d7 48%,
+      #eee5d7 49%,
+      transparent 50%
+    ),
+    linear-gradient(
+      25deg,
+      transparent 47%,
+      #eee5d7 48%,
+      #eee5d7 49%,
+      transparent 50%
+    ),
+    linear-gradient(
+      155deg,
+      transparent 47%,
+      #f0e7d9 48%,
+      #f0e7d9 49%,
+      transparent 50%
+    );
+
+  background-size:
+    220px 180px,
+    260px 220px,
+    300px 260px;
+
+  opacity: 0.75;
+}
+
+
+/* =========================================
+   MAP LINES
+========================================= */
+
+.map-lines {
+  position: absolute;
+
+  background: #e9dfd0;
+
+  height: 2px;
+
+  border-radius: 50%;
+}
+
+
+.map-line-1 {
+  width: 800px;
+
+  left: -80px;
+  top: 180px;
+
+  transform: rotate(14deg);
+}
+
+
+.map-line-2 {
+  width: 750px;
+
+  left: 100px;
+  top: 390px;
+
+  transform: rotate(-13deg);
+}
+
+
+.map-line-3 {
+  width: 600px;
+
+  left: 360px;
+  top: 120px;
+
+  transform: rotate(19deg);
+}
+
+
+.map-line-4 {
+  width: 700px;
+
+  left: 300px;
+  top: 500px;
+
+  transform: rotate(-22deg);
+}
+
+
+.map-line-5 {
+  width: 550px;
+
+  left: 50px;
+  top: 530px;
+
+  transform: rotate(7deg);
+}
+
+
+/* =========================================
+   MAP ROADS
+========================================= */
+
+.map-road {
+  position: absolute;
+
+  width: 700px;
+
+  height: 12px;
+
+  border-top: 2px solid #e8ddcd;
+
+  border-bottom: 2px solid #eee5d8;
+
+  opacity: 0.8;
+}
+
+
+.road-1 {
+  left: 120px;
+  top: 290px;
+
+  transform: rotate(20deg);
+}
+
+
+.road-2 {
+  left: 380px;
+  top: 420px;
+
+  transform: rotate(-18deg);
+}
+
+
+.road-3 {
+  left: 300px;
+  top: 200px;
+
+  transform: rotate(-5deg);
+}
+
+
+/* =========================================
+   LEFT PRODUCT CARD
+========================================= */
+
+.nearby-left-card {
+  position: absolute;
+
+  width: 220px;
+
+  left: 70px;
+  top: 125px;
+
+  background: white;
+
+  border-radius: 12px;
+
+  overflow: hidden;
+
+  transform: rotate(-9deg);
+
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.10);
+
+  z-index: 10;
+
+  transition: transform 0.35s ease;
+}
+
+
+.nearby-left-card:hover {
+  transform: rotate(-5deg) translateY(-7px);
+}
+
+
+/* LEFT IMAGE */
+
+.nearby-left-image {
+  width: 100%;
+
+  height: 165px;
+
+  overflow: hidden;
+}
+
+
+.nearby-left-image img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  display: block;
+}
+
+
+/* LEFT INFO */
+
+.nearby-left-info {
+  padding: 13px 16px 16px;
+}
+
+
+.nearby-left-info h3 {
+  margin: 0 0 6px;
+
+  font-size: 14px;
+
+  line-height: 1.4;
+
+  font-weight: 600;
+}
+
+
+.nearby-left-info span {
+  color: #08a34a;
+
+  font-size: 12px;
+}
+
+
+/* =========================================
+   BLURRED CENTER CARD
+========================================= */
+
+.nearby-blur-card {
+  position: absolute;
+
+  left: 29%;
+
+  top: 45px;
+
+  width: 135px;
+
+  height: 185px;
+
+  background: rgba(255, 255, 255, 0.5);
+
+  border-radius: 12px;
+
+  filter: blur(7px);
+
+  opacity: 0.8;
+
+  z-index: 2;
+}
+
+
+.blur-image {
+  width: 70px;
+
+  height: 95px;
+
+  margin: 15px auto;
+
+  border-radius: 50%;
+
+  background: #999;
+}
+
+
+.blur-content {
+  padding: 0 23px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 9px;
+}
+
+
+.blur-content span {
+  height: 7px;
+
+  background: #ddd;
+
+  border-radius: 5px;
+}
+
+
+/* =========================================
+   MAP PINS
+========================================= */
+
+.map-pin {
+  position: absolute;
+
+  z-index: 8;
+}
+
+
+.map-pin-a {
+  left: 23%;
+
+  top: 390px;
+}
+
+
+.map-pin-b {
+  left: 46%;
+
+  top: 155px;
+}
+
+
+/* =========================================
+   PIN
+========================================= */
+
+.pin-circle {
+  width: 56px;
+
+  height: 56px;
+
+  background: #d71945;
+
+  color: white;
+
+  border-radius: 50% 50% 50% 0;
+
+  transform: rotate(-45deg);
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  font-size: 23px;
+
+  font-weight: 500;
+
+  box-shadow:
+    0 5px 10px rgba(0, 0, 0, 0.12);
+}
+
+
+.pin-circle::after {
+  content: "";
+
+  position: absolute;
+
+  width: 38px;
+
+  height: 38px;
+
+  border: 2px solid white;
+
+  border-radius: 50%;
+}
+
+
+/* =========================================
+   PIN SHADOW
+========================================= */
+
+.pin-tail {
+  position: absolute;
+
+  width: 28px;
+
+  height: 7px;
+
+  background: rgba(0, 0, 0, 0.16);
+
+  border-radius: 50%;
+
+  left: 14px;
+
+  bottom: -12px;
+}
+
+
+/* =========================================
+   DISTANCE
+========================================= */
+
+.distance-label {
+  position: absolute;
+
+  left: 34%;
+
+  top: 267px;
+
+  width: 72px;
+
+  height: 24px;
+
+  background: #e31843;
+
+  color: white;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 2px;
+
+  font-size: 11px;
+
+  z-index: 7;
+}
+
+
+.distance-label small {
+  font-size: 8px;
+}
+
+
+.distance-label i {
+  position: absolute;
+
+  bottom: -7px;
+
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  width: 0;
+  height: 0;
+
+  border-left: 6px solid transparent;
+
+  border-right: 6px solid transparent;
+
+  border-top: 7px solid #e31843;
+}
+
+
+/* =========================================
+   RIGHT CONTENT
+========================================= */
+
+.nearby-content {
+  position: absolute;
+
+  right: 0;
+
+  top: 0;
+
+  width: 52%;
+
+  height: 100%;
+
+  padding: 45px 40px 0 25px;
+
+  z-index: 20;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.nearby-header {
+  display: flex;
+
+  align-items: flex-start;
+
+  justify-content: space-between;
+
+  gap: 15px;
+}
+
+
+.nearby-title h2 {
+  margin: 0;
+
+  /* FONT SIZE SMALLER */
+
+  font-size: clamp(32px, 2.7vw, 43px);
+
+  line-height: 1.1;
+
+  font-weight: 600;
+
+  letter-spacing: -1px;
+
+  color: #050505;
+}
+
+
+/* =========================================
+   OFFER
+========================================= */
+
+.nearby-offer {
+  margin-top: 16px;
+
+  font-size: 14px;
+
+  color: #111;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================
+   SEE ALL
+========================================= */
+
+.nearby-see-all {
+  border: none;
+
+  background: transparent;
+
+  color: #111;
+
+  font-size: 13px;
+
+  white-space: nowrap;
+
+  cursor: pointer;
+
+  margin-top: 185px;
+
+  padding: 0;
+
+  transition: 0.3s ease;
+}
+
+
+.nearby-see-all span {
+  font-size: 21px;
+
+  margin-left: 6px;
+
+  vertical-align: -2px;
+}
+
+
+.nearby-see-all:hover {
+  transform: translateX(4px);
+}
+
+
+/* =========================================
+   PRODUCT CARDS
+========================================= */
+
+.nearby-products {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 28px;
+
+  margin-top: 48px;
+}
+
+
+/* =========================================
+   PRODUCT CARD
+========================================= */
+
+.nearby-product-card {
+  background: white;
+
+  border-radius: 14px;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 7px 22px rgba(0, 0, 0, 0.08);
+
+  transition: 0.35s ease;
+}
+
+
+.nearby-product-card:hover {
+  transform: translateY(-7px);
+}
+
+
+/* FIRST TILTED CARD */
+
+.nearby-product-card.tilted {
+  transform: rotate(8deg);
+
+  position: relative;
+
+  z-index: 5;
+
+  margin-top: -4px;
+}
+
+
+.nearby-product-card.tilted:hover {
+  transform: rotate(4deg) translateY(-7px);
+}
+
+
+/* =========================================
+   CARD IMAGE
+========================================= */
+
+.nearby-product-card img {
+  width: 100%;
+
+  /* IMAGES SMALLER */
+
+  height: 175px;
+
+  object-fit: cover;
+
+  display: block;
+}
+
+
+/* =========================================
+   CARD INFO
+========================================= */
+
+.nearby-product-info {
+  padding: 13px 15px 16px;
+}
+
+
+.nearby-product-info h3 {
+  margin: 0 0 6px;
+
+  /* SMALL FONT */
+
+  font-size: 14px;
+
+  line-height: 1.35;
+
+  font-weight: 600;
+}
+
+
+.nearby-product-info span {
+  color: #08a34a;
+
+  font-size: 12px;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1100px) {
+
+  .nearby-content {
+    width: 55%;
+
+    padding-right: 25px;
+  }
+
+
+  .nearby-left-card {
+    left: 40px;
+
+    width: 200px;
+  }
+
+
+  .nearby-product-card img {
+    height: 155px;
+  }
+
+
+  .nearby-products {
+    gap: 18px;
+  }
+
+
+  .nearby-title h2 {
+    font-size: 34px;
+  }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+
+  .nearby-section {
+    height: auto;
+
+    min-height: 1050px;
+  }
+
+
+  .nearby-left-card {
+    left: 25px;
+
+    top: 70px;
+
+    width: 185px;
+  }
+
+
+  .nearby-left-image {
+    height: 145px;
+  }
+
+
+  .nearby-blur-card {
+    left: 48%;
+
+    top: 40px;
+  }
+
+
+  .map-pin-a {
+    left: 30%;
+
+    top: 340px;
+  }
+
+
+  .map-pin-b {
+    left: 72%;
+
+    top: 150px;
+  }
+
+
+  .distance-label {
+    left: 48%;
+
+    top: 270px;
+  }
+
+
+  .nearby-content {
+    position: relative;
+
+    top: auto;
+
+    right: auto;
+
+    width: 100%;
+
+    height: auto;
+
+    padding: 470px 20px 40px;
+  }
+
+
+  .nearby-header {
+    display: block;
+  }
+
+
+  .nearby-title h2 {
+    font-size: 31px;
+
+    line-height: 1.12;
+  }
+
+
+  .nearby-offer {
+    font-size: 13px;
+
+    white-space: normal;
+  }
+
+
+  .nearby-see-all {
+    margin-top: 18px;
+  }
+
+
+  .nearby-products {
+    grid-template-columns: 1fr 1fr;
+
+    gap: 15px;
+
+    margin-top: 30px;
+  }
+
+
+  .nearby-product-card img {
+    height: 150px;
+  }
+
+
+  .nearby-product-card:nth-child(3) {
+    display: none;
+  }
+
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+
+  .nearby-section {
+    min-height: 980px;
+  }
+
+
+  .nearby-left-card {
+    width: 160px;
+
+    left: 18px;
+
+    top: 60px;
+  }
+
+
+  .nearby-left-image {
+    height: 130px;
+  }
+
+
+  .nearby-left-info {
+    padding: 11px;
+  }
+
+
+  .nearby-left-info h3 {
+    font-size: 12px;
+  }
+
+
+  .nearby-content {
+    padding-top: 435px;
+  }
+
+
+  .nearby-title h2 {
+    font-size: 28px;
+  }
+
+
+  .nearby-offer {
+    font-size: 12px;
+  }
+
+
+  .nearby-products {
+    grid-template-columns: 1fr 1fr;
+  }
+
+
+  .nearby-product-card img {
+    height: 135px;
+  }
+
+
+  .nearby-product-info {
+    padding: 11px;
+  }
+
+
+  .nearby-product-info h3 {
+    font-size: 12px;
+  }
+
+
+  .nearby-product-info span {
+    font-size: 11px;
+  }
+
+}

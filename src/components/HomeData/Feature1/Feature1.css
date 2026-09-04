@@ -1,0 +1,707 @@
+/* =========================================
+   FEATURE 1
+========================================= */
+
+.feature1 {
+    width: 100%;
+    min-height: 500px;
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 80px;
+}
+
+/* =========================================
+   LEFT YELLOW SECTION
+========================================= */
+
+.feature1-left {
+  width: 66%;
+
+  background: #ffea9b;
+
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  overflow: hidden;
+}
+
+
+/* =========================================
+   TOP WAVY DESIGN
+========================================= */
+
+.feature1-top-wave {
+  position: absolute;
+
+  top: -2px;
+  left: 0;
+
+  width: 100%;
+  height: 45px;
+
+  display: flex;
+
+  overflow: hidden;
+}
+
+
+.feature1-top-wave span {
+  width: 85px;
+  height: 55px;
+
+  background: #fff;
+
+  border-radius: 0 0 50% 50%;
+
+  margin-left: -5px;
+
+  transform: translateY(-20px);
+}
+
+
+/* =========================================
+   DECORATIVE CIRCLE
+========================================= */
+
+.feature1-circle-decoration {
+  position: absolute;
+
+  width: 55px;
+  height: 55px;
+
+  border: 1px solid #e91e3f;
+
+  border-radius: 50%;
+
+  top: 62px;
+  left: 205px;
+
+  z-index: 1;
+}
+
+
+.feature1-dot {
+  position: absolute;
+
+  width: 18px;
+  height: 18px;
+
+  background: #222;
+
+  border-radius: 50%;
+
+  left: -9px;
+  top: 125px;
+}
+
+
+/* =========================================
+   PRODUCT WRAPPER
+========================================= */
+
+.feature1-products-wrapper {
+  width: 100%;
+
+  padding: 70px 35px 30px;
+}
+
+
+/* =========================================
+   PRODUCTS GRID
+========================================= */
+
+.feature1-products {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 20px;
+
+  align-items: center;
+}
+
+
+/* =========================================
+   PRODUCT
+========================================= */
+
+.feature1-product {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  animation: featureFade 0.45s ease;
+}
+
+
+@keyframes featureFade {
+
+  from {
+    opacity: 0;
+    transform: translateX(15px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+}
+
+
+/* =========================================
+   CIRCULAR IMAGE
+========================================= */
+
+.feature1-image-circle {
+  width: 185px;
+  height: 185px;
+
+  border-radius: 50%;
+
+  overflow: hidden;
+
+  background: #f5f5f5;
+
+  border: 7px solid rgba(255, 255, 255, 0.5);
+
+  box-shadow:
+    0 10px 25px rgba(0, 0, 0, 0.10);
+
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+
+.feature1-image-circle img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  display: block;
+
+  transition: transform 0.5s ease;
+}
+
+
+.feature1-product:hover .feature1-image-circle {
+  transform: translateY(-8px);
+
+  box-shadow:
+    0 18px 35px rgba(0, 0, 0, 0.16);
+}
+
+
+.feature1-product:hover .feature1-image-circle img {
+  transform: scale(1.08);
+}
+
+
+/* =========================================
+   CATEGORY BUTTON
+========================================= */
+
+.feature1-category-btn {
+  margin-top: 18px;
+
+  min-width: 115px;
+
+  padding: 11px 25px;
+
+  background: #fff;
+
+  border: 1px solid #111;
+
+  border-radius: 30px;
+
+  font-size: 14px;
+
+  font-weight: 500;
+
+  color: #111;
+
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+}
+
+
+.feature1-category-btn:hover {
+  background: #111;
+
+  color: #fff;
+
+  transform: translateY(-2px);
+}
+
+
+/* =========================================
+   ARROWS UNDER IMAGES
+========================================= */
+
+.feature1-arrows {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 30px;
+
+  margin-top: 25px;
+}
+
+
+.feature1-arrow-btn {
+  width: 48px;
+  height: 48px;
+
+  border: 1px solid #111;
+
+  border-radius: 50%;
+
+  background: transparent;
+
+  color: #111;
+
+  font-size: 25px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+}
+
+
+.feature1-arrow-btn:hover {
+  background: #111;
+
+  color: white;
+
+  transform: scale(1.08);
+}
+
+
+/* =========================================
+   SLIDE COUNT
+========================================= */
+
+.feature1-slide-count {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  letter-spacing: 1px;
+}
+
+
+.feature1-slide-count i {
+  width: 35px;
+  height: 1px;
+
+  background: #111;
+
+  display: block;
+}
+
+
+/* =========================================
+   RIGHT BLACK AREA
+========================================= */
+
+.feature1-right {
+  width: 34%;
+
+  background: #050505;
+
+  color: white;
+
+  display: flex;
+
+  align-items: center;
+
+  position: relative;
+
+  padding: 45px 45px;
+}
+
+
+/* =========================================
+   EXPLORE CIRCLE
+========================================= */
+
+.feature1-explore {
+  width: 155px;
+  height: 155px;
+
+  flex-shrink: 0;
+
+  margin-left: -105px;
+
+  position: relative;
+
+  z-index: 5;
+}
+
+
+.feature1-explore-circle {
+    width: 140px;
+    height: 140px;
+    background: white;
+    border-radius: 50%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #111;
+}
+
+/* =========================================
+   CIRCLE TEXT
+========================================= */
+
+.feature1-circle-ring {
+  position: absolute;
+
+  width: 125px;
+  height: 125px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  text-align: center;
+
+  color: #111;
+
+  font-size: 10px;
+
+  line-height: 2;
+
+  letter-spacing: 2px;
+
+  font-weight: 600;
+}
+
+
+/* =========================================
+   CENTER ARROW
+========================================= */
+
+.feature1-center-arrow {
+  width: 65px;
+  height: 65px;
+
+  border-radius: 50%;
+
+  background: #050505;
+
+  color: white;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  font-size: 25px;
+
+  position: relative;
+
+  z-index: 3;
+}
+
+
+/* =========================================
+   RIGHT CONTENT
+========================================= */
+
+.feature1-content {
+  margin-left: 35px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+}
+
+
+.feature1-mini-title {
+  font-size: 10px;
+
+  letter-spacing: 3px;
+
+  color: #aaa;
+
+  margin-bottom: 15px;
+}
+
+
+.feature1-content h2 {
+  margin: 0;
+
+  font-size: clamp(38px, 3.5vw, 56px);
+
+  line-height: 1.1;
+
+  font-weight: 500;
+
+  letter-spacing: -2px;
+}
+
+
+.feature1-content p {
+  margin: 25px 0;
+
+  color: #d2d2d2;
+
+  font-size: 15px;
+
+  line-height: 1.7;
+}
+
+
+.feature1-line {
+  width: 55px;
+
+  height: 2px;
+
+  background: white;
+
+  margin-top: 5px;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1200px) {
+
+  .feature1-image-circle {
+    width: 150px;
+    height: 150px;
+  }
+
+  .feature1-products {
+    gap: 10px;
+  }
+
+  .feature1-right {
+    padding: 30px;
+  }
+
+  .feature1-explore {
+    width: 125px;
+    height: 125px;
+
+    margin-left: -75px;
+  }
+
+  .feature1-explore-circle {
+    width: 125px;
+    height: 125px;
+  }
+
+  .feature1-center-arrow {
+    width: 55px;
+    height: 55px;
+  }
+
+  .feature1-content {
+    margin-left: 20px;
+  }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+
+  .feature1 {
+    flex-direction: column;
+  }
+
+
+  .feature1-left,
+  .feature1-right {
+    width: 100%;
+  }
+
+
+  .feature1-left {
+    min-height: auto;
+  }
+
+
+  .feature1-products-wrapper {
+    padding: 75px 20px 35px;
+  }
+
+
+  .feature1-products {
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 30px 10px;
+  }
+
+
+  .feature1-image-circle {
+    width: 145px;
+    height: 145px;
+  }
+
+
+  .feature1-circle-decoration {
+    left: 70px;
+  }
+
+
+  .feature1-right {
+    min-height: 350px;
+
+    padding: 45px 25px;
+
+    justify-content: center;
+  }
+
+
+  .feature1-explore {
+    margin-left: 0;
+
+    margin-right: 20px;
+  }
+
+
+  .feature1-content {
+    margin-left: 0;
+  }
+
+
+  .feature1-content h2 {
+    font-size: 38px;
+  }
+
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 500px) {
+
+  .feature1-products {
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 25px 5px;
+  }
+
+
+  .feature1-image-circle {
+    width: 120px;
+    height: 120px;
+  }
+
+
+  .feature1-category-btn {
+    min-width: 95px;
+
+    padding: 8px 15px;
+
+    font-size: 12px;
+  }
+
+
+  .feature1-arrows {
+    margin-top: 22px;
+
+    gap: 20px;
+  }
+
+
+  .feature1-arrow-btn {
+    width: 42px;
+    height: 42px;
+
+    font-size: 21px;
+  }
+
+
+  .feature1-right {
+    flex-direction: column;
+
+    text-align: center;
+
+    gap: 25px;
+  }
+
+
+  .feature1-content {
+    align-items: center;
+  }
+
+
+  .feature1-content h2 {
+    font-size: 32px;
+  }
+
+  .feature1-explore {
+  width: 155px;
+  height: 155px;
+
+  flex-shrink: 0;
+
+  margin-left: -85px;
+
+  position: relative;
+
+  z-index: 5;
+}
+
+.feature1-explore-circle {
+  width: 155px;
+  height: 155px;
+
+  background: #fff;
+
+  border-radius: 50%;
+
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #111;
+}
+
+}
