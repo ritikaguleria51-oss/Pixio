@@ -70,7 +70,7 @@ function Banner1() {
 
         <div className="banner1-image-label">
           <span>THE LATEST</span>
-          <strong>COLLECTION</strong>
+          <strong>COLLECTION 01233</strong>
         </div>
 
       </div>

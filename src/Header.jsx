@@ -11,6 +11,8 @@ import { IoIosSearch , IoMdHeartEmpty  } from "react-icons/io";
 import "./Header.css";
 import Logo from "./assets/images/logo (1).svg"
 
+const backendUrl = process.env.REACT_APP_BACKEND_URL || "http://127.0.0.1:8000";
+
 function Header() {
   const [mobileMenu, setMobileMenu] = useState(false);
 
@@ -38,9 +40,9 @@ function Header() {
         {/* Right Side */}
         <div className="header-right">
 
-          <a href="/login">Login</a>
+          <a href={`${backendUrl}/login`}>Login</a>
 
-          <a href="/register">Register</a>
+          <a href={`${backendUrl}/register`}>Register</a>
 
           <IoIosSearch  className="header-icon" size={25} />
 
@@ -71,7 +73,7 @@ function Header() {
           <a href="/post-layout">Post Layout</a>
           <a href="/portfolio">Portfolio</a>
           <a href="/pages">Pages</a>
-          <a href="/login">Login / Register</a>
+          <a href={`${backendUrl}/login`}>Login / Register</a>
         </nav>
       )}
     </header>
