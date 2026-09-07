@@ -1,0 +1,34 @@
+.blog-archive-page {
+  background: #fffaf3;
+}
+
+.blog-archive-content {
+  display: grid;
+  grid-template-columns: minmax(0, 1.65fr) minmax(290px, 0.8fr);
+  gap: 46px;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 82px 28px 100px;
+}
+
+@media (max-width: 900px) {
+  .blog-archive-content {
+    grid-template-columns: 1fr;
+    gap: 50px;
+    padding-top: 56px;
+  }
+}
+
+@media (max-width: 576px) {
+  .blog-archive-hero {
+    min-height: 250px;
+  }
+
+  .blog-archive-content {
+    padding: 42px 18px 70px;
+  }
+
+  .blog-sidebar-block {
+    padding: 22px;
+  }
+}
