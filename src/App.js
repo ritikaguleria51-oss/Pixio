@@ -11,6 +11,9 @@ import BlogArchive from "./Pages/BlogArchive";
 import Shop from "./Pages/Shop";
 import ReferencePage from "./Pages/ReferencePage";
 import PortfolioDetails1 from "./Pages/PortfolioDetails1";
+import AboutUs from "./Pages/AboutUs";
+import AboutMe from "./Pages/AboutMe";
+import PricingTable from "./Pages/PricingTable";
 
 function App() {
   return (
@@ -26,6 +29,12 @@ function App() {
           <Route path="/shop" element={<Shop />} />
           <Route path="/shop/standard" element={<Shop />} />
           <Route path="/portfolio/details-1" element={<PortfolioDetails1 />} />
+          <Route path="/pages/about-us" element={<AboutUs />} />
+          <Route path="/about-us" element={<AboutUs />} />
+          <Route path="/pages/about-me" element={<AboutMe />} />
+          <Route path="/about-me" element={<AboutMe />} />
+          <Route path="/pages/pricing-table" element={<PricingTable />} />
+          <Route path="/pricing-table" element={<PricingTable />} />
           <Route path="*" element={<ReferencePage />} />
         </Routes>
 

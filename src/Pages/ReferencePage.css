@@ -2,6 +2,27 @@
   background: #fffaf3;
 }
 
+.reference-page .reference-hero {
+  background-color: #e8c9bd;
+}
+
+.reference-gallery .reference-hero { background-image: linear-gradient(rgba(38, 31, 28, .46), rgba(38, 31, 28, .46)), url("../assets/images/banner-media2.png"); }
+.reference-wishlist .reference-hero { background-image: linear-gradient(rgba(49, 50, 35, .38), rgba(49, 50, 35, .38)), url("../assets/images/banner-media1.png"); }
+.reference-contact .reference-hero, .reference-appointment .reference-hero { background-image: linear-gradient(rgba(69, 45, 38, .46), rgba(69, 45, 38, .46)), url("../assets/images/banner-media3.png"); }
+.reference-pricing .reference-hero { background-image: linear-gradient(rgba(32, 31, 37, .5), rgba(32, 31, 37, .5)), url("../assets/images/banner-media2.png"); }
+.reference-journal .reference-hero { background-image: linear-gradient(rgba(42, 38, 34, .43), rgba(42, 38, 34, .43)), url("../assets/images/banner-media3.png"); }
+
+.reference-page .reference-content::after {
+  content: "Every piece has a point of view. Find yours.";
+  display: block;
+  margin-top: 82px;
+  padding: 36px 0;
+  border-top: 1px solid #ded7d0;
+  color: #77716d;
+  font: 24px Georgia, serif;
+  text-align: center;
+}
+
 .reference-hero {
   min-height: 315px;
   display: grid;
