@@ -1,0 +1,7 @@
+@include('admin.header')
+@include('admin.sidebar')
+<div id="layoutSidenav"><div id="layoutSidenav_content"><div class="container-fluid px-4"><div class="main-footer"><div class="card"><div class="card-header"><h3>All Featured Offers</h3></div><div class="card-body">
+@if(session('success'))<div class="alert alert-success">{{ session('success') }}</div>@endif
+<table class="table table-bordered table-hover"><thead><tr><th>Image</th><th>Tag</th><th>Title</th><th>Style</th><th>Status</th><th>Edit</th><th>Delete</th></tr></thead><tbody>
+@forelse($featuredOffers as $featuredOffer)<tr><td><img src="{{ str_starts_with($featuredOffer->image, 'http') ? $featuredOffer->image : asset('storage/' . $featuredOffer->image) }}" width="100" height="70" style="object-fit:cover"></td><td>{{ $featuredOffer->tag }}</td><td>{{ $featuredOffer->title }}</td><td>{{ $featuredOffer->background_class }}</td><td>@if($featuredOffer->status)<span class="badge bg-success">Active</span>@else<span class="badge bg-danger">Inactive</span>@endif</td><td><a href="{{ route('admin.featured-offers.edit', $featuredOffer) }}" class="btn btn-primary">Edit</a></td><td><form action="{{ route('admin.featured-offers.destroy', $featuredOffer) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this offer?');">@csrf @method('DELETE')<button type="submit" class="btn btn-danger">Delete</button></form></td></tr>@empty<tr><td colspan="7" class="text-center">No featured offers found</td></tr>@endforelse
+</tbody></table></div></div></div></div>@include('admin.footer')</div></div>

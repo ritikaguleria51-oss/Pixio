@@ -2,7 +2,7 @@
   min-height: 315px;
   display: grid;
   place-items: center;
-  background: linear-gradient(rgba(83, 59, 38, 0.58), rgba(83, 59, 38, 0.58)), url("../../../assets/images/banner-media3.png") center 35% / cover;
+  background: linear-gradient(rgba(83, 59, 38, 0.58), rgba(83, 59, 38, 0.58)), var(--shop-hero-image, url("../../../assets/images/banner-media3.png")) center 35% / cover;
 }
 
 .shop-hero-content {

@@ -1,0 +1,9 @@
+@include('admin.header')
+@include('admin.sidebar')
+<div id="layoutSidenav"><div id="layoutSidenav_content"><div class="container-fluid px-4">
+@if($errors->any())<div class="alert alert-danger">@foreach($errors->all() as $error)<div>{{ $error }}</div>@endforeach</div>@endif
+<form action="{{ route('admin.top-collection.update', $topCollection) }}" class="top-collection main-footer" method="POST" enctype="multipart/form-data">@csrf @method('PUT')
+<h2 class="text-center mb-5">Edit Top Collection</h2>
+@foreach(['top_left_image' => 'Top Left Image', 'top_right_image' => 'Top Right Image', 'bottom_left_image' => 'Bottom Left Image', 'bottom_right_image' => 'Bottom Right Image'] as $field => $label)<h4>{{ $label }}</h4><img src="{{ str_starts_with($topCollection->{$field}, 'http') ? $topCollection->{$field} : asset('storage/' . $topCollection->{$field}) }}" width="100" height="80" style="object-fit:cover" class="mb-2"><input type="file" class="form-control mb-4" name="{{ $field }}">@endforeach
+<h4>Badge</h4><input class="form-control mb-3" name="badge" value="{{ old('badge', $topCollection->badge) }}"><h4>Heading</h4><input class="form-control mb-3" name="heading" value="{{ old('heading', $topCollection->heading) }}"><h4>Button</h4><input class="form-control mb-3" name="button_text" value="{{ old('button_text', $topCollection->button_text) }}"><input class="form-control mb-4" name="button_link" value="{{ old('button_link', $topCollection->button_link) }}"><h4>Status</h4><select class="form-control mb-4" name="status"><option value="1" @selected(old('status', $topCollection->status) == 1)>Active</option><option value="0" @selected(old('status', $topCollection->status) == 0)>Inactive</option></select><button type="submit" class="input-group-text mx-auto mb-4">Update Top Collection</button>
+</form></div>@include('admin.footer')</div></div>

@@ -1,6 +1,6 @@
 import "./ShopFilters.css";
 
-const categories = [
+const defaultCategories = [
   ["Dresses", "10"],
   ["Top & Blouses", "05"],
   ["Boots", "17"],
@@ -12,11 +12,7 @@ const categories = [
   ["Coat", "22"],
 ];
 
-const colors = ["Black", "White", "Red", "Blue", "Green"];
-const sizes = ["XS", "S", "M", "L", "XL"];
-const tags = ["Vintage", "Wedding", "Cotton", "Linen", "Navy", "Urban", "Formal"];
-
-function ShopFilters() {
+function ShopFilters({ categories = defaultCategories, colors = ["Black", "White", "Red", "Blue", "Green"], sizes = ["XS", "S", "M", "L", "XL"], tags = ["Vintage", "Wedding", "Cotton", "Linen", "Navy", "Urban", "Formal"] }) {
   return (
     <aside className="shop-filters">
       <div className="shop-filter-heading">
@@ -50,7 +46,10 @@ function ShopFilters() {
       <section className="shop-filter-group">
         <h3>Category</h3>
         <ul className="shop-category-list">
-          {categories.map(([name, count]) => <li key={name}><a href="/shop">{name}</a><span>({count})</span></li>)}
+          {categories.map((category) => {
+            const name = category.name || category[0];
+            return <li key={name}><a href={`/shop?category=${encodeURIComponent(name)}`}>{name}</a><span>({category.count || category[1]})</span></li>;
+          })}
         </ul>
       </section>
 

@@ -7,6 +7,7 @@ import "./App.css";
 
 import Home from "./Pages/Home";
 import Blog from "./Pages/Blog";
+import BlogDetails from "./Pages/BlogDetails";
 import BlogArchive from "./Pages/BlogArchive";
 import Shop from "./Pages/Shop";
 import ReferencePage from "./Pages/ReferencePage";
@@ -25,6 +26,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/:id" element={<BlogDetails />} />
           <Route path="/blog/archive" element={<BlogArchive />} />
           <Route path="/shop" element={<Shop />} />
           <Route path="/shop/standard" element={<Shop />} />

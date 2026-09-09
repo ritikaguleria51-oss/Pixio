@@ -1,0 +1,7 @@
+@include('admin.header')
+@include('admin.sidebar')
+<div id="layoutSidenav"><div id="layoutSidenav_content"><div class="container-fluid px-4"><div class="main-footer"><div class="card"><div class="card-header"><h3>All Top Collection</h3></div><div class="card-body">
+@if(session('success'))<div class="alert alert-success">{{ session('success') }}</div>@endif
+<table class="table table-bordered table-hover"><thead><tr><th>Images</th><th>Badge</th><th>Heading</th><th>Status</th><th>Edit</th><th>Delete</th></tr></thead><tbody>
+@forelse($topCollections as $topCollection)<tr><td>{{ $topCollection->top_left_image }}<br>{{ $topCollection->top_right_image }}</td><td>{{ $topCollection->badge }}</td><td>{{ $topCollection->heading }}</td><td>@if($topCollection->status)<span class="badge bg-success">Active</span>@else<span class="badge bg-danger">Inactive</span>@endif</td><td><a href="{{ route('admin.top-collection.edit', $topCollection) }}" class="btn btn-primary">Edit</a></td><td><form action="{{ route('admin.top-collection.destroy', $topCollection) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this Top Collection?');">@csrf @method('DELETE')<button type="submit" class="btn btn-danger">Delete</button></form></td></tr>@empty<tr><td colspan="6" class="text-center">No Top Collection found</td></tr>@endforelse
+</tbody></table></div></div></div></div>@include('admin.footer')</div></div>
