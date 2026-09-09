@@ -100,7 +100,7 @@ function Feature1() {
                 <div className="feature1-image-circle">
                   <img
                     src={category.image}
-                    alt={category.name}
+                    alt={category.names}
                   />
                 </div>
 
