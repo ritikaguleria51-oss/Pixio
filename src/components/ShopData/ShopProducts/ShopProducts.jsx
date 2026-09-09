@@ -3,7 +3,7 @@ import { IoMdHeartEmpty } from "react-icons/io";
 import { BsCartPlus } from "react-icons/bs";
 import "./ShopProducts.css";
 
-const products = [
+const defaultProducts = [
   ["Cozy Knit Cardigan Sweater", "banner-media1.png"],
   ["Sophisticated Swagger Suit", "banner-media2.png"],
   ["Classic Denim Skinny Jeans", "banner-media3.png"],
@@ -18,13 +18,13 @@ const products = [
   ["Hiking Outdoor Gear Collection", "banner-media3.png"],
 ];
 
-function ShopProducts() {
+function ShopProducts({ products = defaultProducts }) {
   const [sort, setSort] = useState("Latest");
 
   return (
     <section className="shop-products" aria-label="Shop products">
       <div className="shop-toolbar">
-        <p>Showing <strong>1-12</strong> Of <strong>50</strong> Results</p>
+        <p>Showing <strong>1-{products.length}</strong> Of <strong>{products.length}</strong> Results</p>
         <div className="shop-toolbar-actions">
           <button type="button">Filter</button>
           <label>
@@ -39,11 +39,13 @@ function ShopProducts() {
         </div>
       </div>
       <div className="shop-product-grid">
-        {products.map(([name, image]) => (
-          <article className="shop-product-card" key={name}>
+        {products.map((product, index) => {
+          const name = product.name || product[0];
+          const image = product.image || product[2];
+          return <article className="shop-product-card" key={product.id || name}>
             <div className="shop-product-image">
-              <img src={require(`../../../assets/images/${image}`)} alt={name} />
-              <span className="shop-product-sale">GET 20% OFF</span>
+              <img src={image?.startsWith("http") ? image : image?.includes("/") ? `${process.env.REACT_APP_API_URL || "http://127.0.0.1:8000"}/storage/${image}` : require(`../../../assets/images/${image || `banner-media${(index % 3) + 1}.png`}`)} alt={name} />
+              <span className="shop-product-sale">{product.sale_label || "GET 20% OFF"}</span>
               <div className="shop-product-actions">
                 <button type="button" aria-label={`Add ${name} to cart`}><BsCartPlus /></button>
                 <button type="button" aria-label={`Add ${name} to wishlist`}><IoMdHeartEmpty /></button>
@@ -52,10 +54,10 @@ function ShopProducts() {
             </div>
             <div className="shop-product-info">
               <h2><a href="/shop">{name}</a></h2>
-              <p>$80</p>
+              <p>{product.price || "$80"}</p>
             </div>
-          </article>
-        ))}
+          </article>;
+        })}
       </div>
       <nav className="shop-pagination" aria-label="Shop pagination">
         <a href="/shop" aria-current="page">1</a>

@@ -1,13 +1,9 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import "./Feature1.css";
 
 function Feature1() {
   const categories = [
-    {
-      name: "Shirts",
-      image:
-        "https://images.unsplash.com/photo-1596755389378-c31d21fd1273?auto=format&fit=crop&w=500&q=80",
-    },
     {
       name: "Shorts",
       image:
@@ -108,9 +104,9 @@ function Feature1() {
                   />
                 </div>
 
-                <button className="feature1-category-btn">
+                <Link className="feature1-category-btn" to={`/shop?category=${encodeURIComponent(category.name)}`}>
                   {category.name}
-                </button>
+                </Link>
 
               </div>
             ))}

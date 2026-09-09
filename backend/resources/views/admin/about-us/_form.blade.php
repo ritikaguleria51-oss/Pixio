@@ -1,0 +1,22 @@
+@php
+    $content = $aboutUsContent ?? null;
+    $value = fn ($field) => old($field, $content?->{$field});
+@endphp
+
+@if($errors->any())<div class="alert alert-danger">@foreach($errors->all() as $error)<div>{{ $error }}</div>@endforeach</div>@endif
+<form action="{{ $formAction }}" method="POST" enctype="multipart/form-data" class="main-footer">
+    @csrf @if($formMethod !== 'POST') @method($formMethod) @endif
+    <h2 class="text-center mb-5">{{ $formTitle }}</h2>
+    <div class="row">
+        @foreach(['hero_image' => 'Hero Image', 'story_image' => 'Story Image', 'detail_image' => 'Experience Image'] as $field => $label)
+            <div class="col-md-4"><label class="form-label">{{ $label }} {{ $content ? '(optional)' : '' }}</label><input type="file" class="form-control mb-3" name="{{ $field }}" accept="image/*" {{ $content ? '' : 'required' }}>@if($content?->{$field})<img src="{{ asset('storage/' . $content->{$field}) }}" alt="{{ $label }}" width="140" height="100" style="object-fit:cover" class="mb-4">@endif</div>
+        @endforeach
+    </div>
+    <h4>Hero</h4><input class="form-control mb-3" name="hero_kicker" placeholder="About Pixio" value="{{ $value('hero_kicker') }}"><input class="form-control mb-4" name="hero_title" placeholder="Your fashion journey starts here" value="{{ $value('hero_title') }}">
+    <h4>Stats</h4>
+    @foreach([1, 2, 3] as $number)<div class="row"><div class="col-md-4"><input class="form-control mb-3" name="stat_{{ $number }}_number" placeholder="50+" value="{{ $value('stat_'.$number.'_number') }}"></div><div class="col-md-8"><input class="form-control mb-3" name="stat_{{ $number }}_label" placeholder="Items Sale" value="{{ $value('stat_'.$number.'_label') }}"></div></div>@endforeach
+    <h4>Story</h4><input class="form-control mb-3" name="story_kicker" placeholder="Why Pixio?" value="{{ $value('story_kicker') }}"><input class="form-control mb-3" name="story_title" placeholder="Story heading" value="{{ $value('story_title') }}"><textarea class="form-control mb-3" name="story_paragraph_one" rows="4" placeholder="First paragraph">{{ $value('story_paragraph_one') }}</textarea><textarea class="form-control mb-3" name="story_paragraph_two" rows="4" placeholder="Second paragraph">{{ $value('story_paragraph_two') }}</textarea><div class="row"><div class="col-md-6"><input class="form-control mb-4" name="story_link_text" placeholder="Explore the collection" value="{{ $value('story_link_text') }}"></div><div class="col-md-6"><input class="form-control mb-4" name="story_link_url" placeholder="/shop" value="{{ $value('story_link_url') }}"></div></div>
+    <h4>Experience</h4><input class="form-control mb-3" name="experience_kicker" placeholder="The Pixio experience" value="{{ $value('experience_kicker') }}"><input class="form-control mb-3" name="experience_title" placeholder="Experience heading" value="{{ $value('experience_title') }}"><textarea class="form-control mb-3" name="experience_paragraph_one" rows="4" placeholder="First paragraph">{{ $value('experience_paragraph_one') }}</textarea><textarea class="form-control mb-3" name="experience_paragraph_two" rows="4" placeholder="Second paragraph">{{ $value('experience_paragraph_two') }}</textarea><div class="row"><div class="col-md-6"><input class="form-control mb-4" name="signature_name" placeholder="Kenneth Fong" value="{{ $value('signature_name') }}"></div><div class="col-md-6"><input class="form-control mb-4" name="signature_role" placeholder="CEO and founder" value="{{ $value('signature_role') }}"></div></div>
+    <h4>CTA and Social</h4><input class="form-control mb-3" name="cta_kicker" placeholder="Questions?" value="{{ $value('cta_kicker') }}"><input class="form-control mb-3" name="cta_title" placeholder="CTA heading" value="{{ $value('cta_title') }}"><input class="form-control mb-4" name="instagram_handle" placeholder="@pixio.style" value="{{ $value('instagram_handle') }}">
+    <label class="form-check mb-4"><input class="form-check-input" type="checkbox" name="status" value="1" {{ old('status', $content?->status ?? true) ? 'checked' : '' }}> Active</label><button type="submit" class="btn btn-primary">{{ $content ? 'Update About Us' : 'Save About Us' }}</button>
+</form>
